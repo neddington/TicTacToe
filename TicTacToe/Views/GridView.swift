@@ -27,11 +27,18 @@ struct GridView: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(Color.clear)
-                                    VStack {
-                                        Text("\(ticVm.grid[index].rawValue)")
-                                            .font(.largeTitle)
-                                            .fontWeight(.bold)
+                                    Group {
+                                        if ticVm.grid[index] == .b {
+                                            // leave cell blank
+                                        } else if ticVm.grid[index] == .x {
+                                            XShape()
+                                                .fill(Color(red: 150/255, green: 20/255, blue: 20/255))
+                                        } else {
+                                            OShape()
+                                                .fill(Color(red: 100/255, green: 20/255, blue: 140/255))
+                                        }
                                     }
+                                    .padding(12)
                                 }
                                 .frame(width: 80, height: 80)
                             }

@@ -40,6 +40,7 @@ struct TicTacToeView: View {
                 Spacer()
             }
         }
+        
     }
 }
 
