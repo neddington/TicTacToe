@@ -27,7 +27,26 @@ class TicViewModel: ObservableObject {
     }
     
     var isGameOver: Bool {
-        get { ticModel.isGridFull || (ticModel.winner != .none) }
+        get { ticModel.isGridFull || (ticModel.winner != .none)
+            
+            
+        }
+    }
+    
+    var winnerDisplay: String {
+        get {
+            var message = ""
+            if ticModel.winner == .x {
+                message = "X Wins"
+            }
+            else if ticModel.winner == .o {
+                message = "O Wins"
+            }
+            else if ticModel.winner == .none && isGameOver {
+                message = "Draw"
+            }
+            return message
+        }
     }
     
     func setCell(index: Int, cellValue: Cell) {
@@ -36,4 +55,8 @@ class TicViewModel: ObservableObject {
         _ = ticModel.updateGameStatus()
     }
     
+        func reset() {
+            // initialize a new model
+            ticModel = TicModel()
+        }
 }

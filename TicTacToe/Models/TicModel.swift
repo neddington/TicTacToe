@@ -59,6 +59,8 @@ struct TicModel {
         _grid[n] = c
         _playerXTurn.toggle()
     }
+    
+    
 
     mutating func updateGameStatus() -> Bool {
         // There are 9 possible winning options in Tic Tac Toe
@@ -83,4 +85,7 @@ struct TicModel {
 
         return false
     }
+    
 }
+
+

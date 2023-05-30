@@ -109,6 +109,120 @@ class TicViewModelTests: XCTestCase {
             XCTAssertEqual(i%2==0  , ticViewModel.isXTurn)
         }
     }
+    
+    func test_startGame_winnerDisplayEmpty() {
+           // Arrange
+           let ticViewModel = TicViewModel()
 
+           // Act
+
+           // Assert
+           XCTAssertEqual("", ticViewModel.winnerDisplay)
+       }
+    
+    func test_xWins_winnerDisplayXWins() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        for i in [0,1,2] {
+            ticViewModel.setCell(index: i, cellValue: .x)
+        }
+        
+        // Assert
+        XCTAssertTrue(ticViewModel.isGameOver)
+        XCTAssertEqual("X Wins", ticViewModel.winnerDisplay)
+    }
+
+    func test_xWinsFull_winnerDisplayXWins() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .o, .x,
+                                .o, .x, .o,
+                                .x, .o, .x]
+        for (n,c) in zip(0..<9, fullGrid) {
+            ticViewModel.setCell(index: n, cellValue: c)
+        }
+        // Assert
+        XCTAssertTrue(ticViewModel.isGameOver)
+        XCTAssertEqual("X Wins", ticViewModel.winnerDisplay)
+    }
+
+    func test_oWins_winnerDisplayOWins() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .o, .x,
+                                .x, .x, .b,
+                                .o, .o, .o]
+        for (n,c) in zip(0..<9, fullGrid) {
+            ticViewModel.setCell(index: n, cellValue: c)
+        }
+        // Assert
+        XCTAssertTrue(ticViewModel.isGameOver)
+        XCTAssertEqual("O Wins", ticViewModel.winnerDisplay)
+    }
+
+    func test_draw_winnerDisplayDraw() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .o, .x,
+                                .x, .x, .o,
+                                .o, .x, .o]
+        for (n,c) in zip(0..<9, fullGrid) {
+            ticViewModel.setCell(index: n, cellValue: c)
+        }
+        // Assert
+        XCTAssertTrue(ticViewModel.isGameOver)
+        XCTAssertEqual("Draw", ticViewModel.winnerDisplay)
+    }
+    
+    func test_reset_gridEmpty() {
+            // Arrange
+            let ticViewModel = TicViewModel()
+
+            // Act
+            ticViewModel.reset()
+
+            // Assert
+            XCTAssertEqual(ticViewModel.grid.count, 9)
+            XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
+        }
+    
+    func test_resetAfterOne_gridEmpty() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        ticViewModel.setCell(index: 0, cellValue: .x)
+        ticViewModel.reset()
+
+        // Assert
+        XCTAssertEqual(ticViewModel.grid.count, 9)
+        XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
+    }
+
+    func test_resetGameOver_gridEmpty() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .o, .x,
+                                .x, .x, .o,
+                                .o, .x, .o]
+        for (n,c) in zip(0..<9, fullGrid) {
+            ticViewModel.setCell(index: n, cellValue: c)
+        }
+        ticViewModel.reset()
+
+        // Assert
+        XCTAssertEqual(ticViewModel.grid.count, 9)
+        XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
+    }
 
 }

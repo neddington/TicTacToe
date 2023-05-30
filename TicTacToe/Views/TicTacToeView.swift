@@ -42,9 +42,16 @@ struct TicTacToeView: View {
                         .foregroundColor(Color.indigo)
                         .font(.custom("Helvetica Neue", size: 46, relativeTo: .largeTitle))
                         .fontWeight(.bold)
+                    
+                    Text(ticVm.winnerDisplay)
+                        .foregroundColor(Color.yellow)
+                        .font(.custom("Helvetica Neue", size: 46, relativeTo: .largeTitle))
+                        .fontWeight(.bold)
                 }
                 
                 Spacer()
+                Button("New Game", action: ticVm.reset)
+                    .buttonStyle(DefaultButtonStyle())
             }
         }
     }
