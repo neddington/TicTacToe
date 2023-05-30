@@ -19,7 +19,7 @@ struct TicModel {
     init() {
         _grid = []
         for _ in 0..<9 {
-            _grid.append(Cell.b)
+            _grid.append(Cell.x)
         }
     }
     
