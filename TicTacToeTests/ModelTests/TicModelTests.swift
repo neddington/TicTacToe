@@ -17,6 +17,17 @@ class TicModelTests: XCTestCase {
         // Act
         
         // Assert
+        XCTAssertEqual(ticModel.grid.count, 9)
+    }
+
+    func test_initialValue_IsBlank() {
+        // Arrange
+        let ticModel = TicModel()
+        
+        // Act
+        
+        // Assert
+        XCTAssertEqual((ticModel.grid.filter { $0 == cell.b }.count), 9)
     }
 
 }
