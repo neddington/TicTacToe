@@ -1,5 +1,5 @@
 //
-//  TicModelTests.swift
+//  TicViewModelTests.swift
 //  TicTacToeTests
 //
 //  Created by Eddington, Nick on 5/30/23.
@@ -8,26 +8,25 @@
 import XCTest
 @testable import TicTacToe
 
-class TicModelTests: XCTestCase {
+class TicViewModelTests: XCTestCase {
 
     func test_initialValue_NineCells() {
         // Arrange
-        let ticModel = TicModel()
-        
+        let ticViewModel = TicViewModel()
         // Act
         
         // Assert
-        XCTAssertEqual(ticModel.grid.count, 9)
+        XCTAssertEqual(ticViewModel.grid.count, 9)
     }
 
     func test_initialValue_IsBlank() {
         // Arrange
-        let ticModel = TicModel()
+        let ticViewModel = TicViewModel()
         
         // Act
         
         // Assert
-        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.b }.count), 9)
+        XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
     }
-
 }
+
