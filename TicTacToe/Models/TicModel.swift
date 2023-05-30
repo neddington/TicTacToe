@@ -23,14 +23,23 @@ struct TicModel {
     private var _grid: [Cell]
     private var _winner: Winner
     private var _playerXTurn: Bool
+    private var _winningLines: [Bool]
     
     init() {
         _grid = []
         for _ in 0..<9 {
             _grid.append(Cell.b)
         }
+        _winningLines = []
+        for _ in 0..<8 {
+            _winningLines.append(false)
+        }
         _winner = .none
         _playerXTurn = true
+    }
+    
+    var winningLines: [Bool] {
+        get { _winningLines }
     }
     
     var isXTurn: Bool {
@@ -59,11 +68,10 @@ struct TicModel {
         _grid[n] = c
         _playerXTurn.toggle()
     }
-    
-    
 
     mutating func updateGameStatus() -> Bool {
-        // There are 9 possible winning options in Tic Tac Toe
+        // There are 8 possible winning options in Tic Tac Toe
+        // The order of these options needs to match _winningLines
         let winOptions: [Set<Int>] = [
             [0,1,2], [3,4,5], [6,7,8],
             [0,3,6], [1,4,7], [2,5,8],
@@ -72,12 +80,14 @@ struct TicModel {
         let oCells: Set<Int> = Set(_grid.indices.map { _grid[$0] == Cell.o ? $0 : -1 })
         let xCells: Set<Int> = Set(_grid.indices.map { _grid[$0] == Cell.x ? $0 : -1 })
 
-        for i in winOptions {
-            if i.intersection(xCells) == i {
+        for (i, win) in winOptions.enumerated() {
+            if win.intersection(xCells) == win {
+                _winningLines[i] = true
                 _winner = .x
                 return true
             }
-            if i.intersection(oCells) == i {
+            if win.intersection(oCells) == win {
+                _winningLines[i] = true
                 _winner = .o
                 return true
             }
@@ -85,6 +95,7 @@ struct TicModel {
 
         return false
     }
+
     
 }
 

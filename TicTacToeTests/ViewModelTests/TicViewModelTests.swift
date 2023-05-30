@@ -224,5 +224,29 @@ class TicViewModelTests: XCTestCase {
         XCTAssertEqual(ticViewModel.grid.count, 9)
         XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
     }
+    
+    func test_winLinesNewGame_empty() {
+        // Arrange
+        let ticModel = TicModel()
 
+        // Act
+
+        // Assert
+        XCTAssertEqual((ticModel.winningLines.filter { $0 == false }.count), 8)
+    }
+    
+    func test_winLinesTopRow_oneTrue() {
+        // Arrange
+        var ticModel = TicModel()
+
+        // Act
+        for i in [0,1,2] {
+            ticModel.setCell(n: i, c: .x)
+        }
+        let _ = ticModel.updateGameStatus()
+
+        // Assert
+        XCTAssertTrue(ticModel.winningLines[0])
+        XCTAssertEqual((ticModel.winningLines.filter { $0 == false }.count), 7)
+    }
 }
