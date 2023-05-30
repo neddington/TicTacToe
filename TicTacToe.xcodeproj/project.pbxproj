@@ -30,6 +30,8 @@
 		2C08EFAE2A269DF9001D9540 /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFAC2A269DF9001D9540 /* XShape.swift */; };
 		2C08EFB02A269F2B001D9540 /* OShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFAF2A269F2B001D9540 /* OShape.swift */; };
 		2C08EFB12A269F2B001D9540 /* OShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFAF2A269F2B001D9540 /* OShape.swift */; };
+		2C08EFB32A26BE7E001D9540 /* WinLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFB22A26BE7E001D9540 /* WinLinesView.swift */; };
+		2C08EFB42A26BE7E001D9540 /* WinLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFB22A26BE7E001D9540 /* WinLinesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,7 @@
 		2C08EFA62A269C34001D9540 /* ActivePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlayerView.swift; sourceTree = "<group>"; };
 		2C08EFAC2A269DF9001D9540 /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
 		2C08EFAF2A269F2B001D9540 /* OShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OShape.swift; sourceTree = "<group>"; };
+		2C08EFB22A26BE7E001D9540 /* WinLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLinesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,7 @@
 				2C08EFA32A26955E001D9540 /* GridLinesView.swift */,
 				2C08EFA62A269C34001D9540 /* ActivePlayerView.swift */,
 				2C08EFAF2A269F2B001D9540 /* OShape.swift */,
+				2C08EFB22A26BE7E001D9540 /* WinLinesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +337,7 @@
 				2C08EF9A2A268ACE001D9540 /* TicViewModel.swift in Sources */,
 				2C08EF9E2A268B90001D9540 /* TicTacToeView.swift in Sources */,
 				2C08EFA42A26955E001D9540 /* GridLinesView.swift in Sources */,
+				2C08EFB32A26BE7E001D9540 /* WinLinesView.swift in Sources */,
 				2C08EFAD2A269DF9001D9540 /* XShape.swift in Sources */,
 				2C08EFB02A269F2B001D9540 /* OShape.swift in Sources */,
 				2C08EF5F2A26867A001D9540 /* TicTacToeApp.swift in Sources */,
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C08EFB42A26BE7E001D9540 /* WinLinesView.swift in Sources */,
 				2C08EFA52A26955E001D9540 /* GridLinesView.swift in Sources */,
 				2C08EFB12A269F2B001D9540 /* OShape.swift in Sources */,
 				2C08EF8E2A26879B001D9540 /* TicModel.swift in Sources */,

@@ -249,4 +249,82 @@ class TicViewModelTests: XCTestCase {
         XCTAssertTrue(ticModel.winningLines[0])
         XCTAssertEqual((ticModel.winningLines.filter { $0 == false }.count), 7)
     }
+    
+    func test_winLinesNewGame_noneTrue() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+
+        // Assert
+        XCTAssertEqual((ticViewModel.winningLines.filter { $0 == false }.count), 8)
+    }
+
+    func test_winLinesDraw_noneTrue() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .o, .x,
+                                .x, .x, .o,
+                                .o, .x, .o]
+        for (i,c) in fullGrid.enumerated() {
+            ticViewModel.setCell(index: i, cellValue: c)
+        }
+
+        // Assert
+        XCTAssertEqual((ticViewModel.winningLines.filter { $0 == false }.count), 8)
+    }
+
+    func test_winLinesTopRow_oneTrue() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .x, .x,
+                                .b, .o, .o,
+                                .b, .b, .b]
+        for (i,c) in fullGrid.enumerated() {
+            ticViewModel.setCell(index: i, cellValue: c)
+        }
+
+        // Assert
+        XCTAssertTrue(ticViewModel.winningLines[0])
+        XCTAssertEqual((ticViewModel.winningLines.filter { $0 }.count), 1)
+    }
+
+    func test_winLinesTwoRow_twoTrue() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .x, .x,
+                                .o, .x, .o,
+                                .o, .x, .o]
+        for (i,c) in fullGrid.enumerated() {
+            ticViewModel.setCell(index: i, cellValue: c)
+        }
+
+        // Assert
+        XCTAssertTrue(ticViewModel.winningLines[0])
+        XCTAssertTrue(ticViewModel.winningLines[4])
+        XCTAssertEqual((ticViewModel.winningLines.filter { $0 }.count), 2)
+    }
+
+    func test_winLinesAllRows_eightTrue() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+        let fullGrid: [Cell] = [.x, .x, .x,
+                                .x, .x, .x,
+                                .x, .x, .x]
+        for (i,c) in fullGrid.enumerated() {
+            ticViewModel.setCell(index: i, cellValue: c)
+        }
+
+        // Assert
+        XCTAssertEqual((ticViewModel.winningLines.filter { $0  }.count), 8)
+    }
+
 }

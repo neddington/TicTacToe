@@ -70,6 +70,7 @@ struct TicModel {
     }
 
     mutating func updateGameStatus() -> Bool {
+        var result = false
         // There are 8 possible winning options in Tic Tac Toe
         // The order of these options needs to match _winningLines
         let winOptions: [Set<Int>] = [
@@ -84,17 +85,18 @@ struct TicModel {
             if win.intersection(xCells) == win {
                 _winningLines[i] = true
                 _winner = .x
-                return true
+                result = true
             }
             if win.intersection(oCells) == win {
                 _winningLines[i] = true
                 _winner = .o
-                return true
+                result = true
             }
         }
 
-        return false
+        return result
     }
+
 
     
 }

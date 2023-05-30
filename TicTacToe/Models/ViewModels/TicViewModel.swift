@@ -14,6 +14,10 @@ class TicViewModel: ObservableObject {
         ticModel = TicModel()
     }
     
+    var winningLines: [Bool] {
+        get { ticModel.winningLines }
+    }
+    
     var isXTurn: Bool {
         get { ticModel.isXTurn }
     }
@@ -28,7 +32,6 @@ class TicViewModel: ObservableObject {
     
     var isGameOver: Bool {
         get { ticModel.isGridFull || (ticModel.winner != .none)
-            
             
         }
     }

@@ -50,6 +50,11 @@ struct GridView: View {
             GridLinesView()
                 .foregroundColor(Color.indigo)
                 .frame(width: 240, height: 240)
+            
+            // Winning Lines View
+            WinLinesView(winningLines: ticVm.winningLines)
+                .foregroundColor(Color.yellow)
+                .frame(width: 240, height: 240)
         }
     }
 }
