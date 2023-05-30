@@ -15,14 +15,31 @@ struct TicTacToeView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Tic Tac Toe Game")
+        ZStack {
+            Color.gray
+                .edgesIgnoringSafeArea(.all)
             
-            GridView(ticVm: ticVm)
-            
-            Spacer()
+            VStack {
+                Text("Tic Tac Toe Game")
+                    .foregroundColor(Color.indigo)
+                    .font(.custom("Helvetica Neue", size: 36, relativeTo: .largeTitle))
+                    .fontWeight(.bold)
+                
+                HStack {
+                    ActivePlayerView(
+                        isActive: ticVm.isXTurn && !ticVm.isGameOver,
+                        player: "Player X")
+
+                    ActivePlayerView(
+                        isActive: !ticVm.isXTurn && !ticVm.isGameOver,
+                        player: "Player O")
+                }
+                
+                GridView(ticVm: ticVm)
+                
+                Spacer()
+            }
         }
-        
     }
 }
 

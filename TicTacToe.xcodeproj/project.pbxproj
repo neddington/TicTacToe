@@ -24,6 +24,8 @@
 		2C08EFA22A26904D001D9540 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFA02A26904D001D9540 /* GridView.swift */; };
 		2C08EFA42A26955E001D9540 /* GridLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFA32A26955E001D9540 /* GridLinesView.swift */; };
 		2C08EFA52A26955E001D9540 /* GridLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFA32A26955E001D9540 /* GridLinesView.swift */; };
+		2C08EFA72A269C34001D9540 /* ActivePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFA62A269C34001D9540 /* ActivePlayerView.swift */; };
+		2C08EFA82A269C34001D9540 /* ActivePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EFA62A269C34001D9540 /* ActivePlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		2C08EF9D2A268B90001D9540 /* TicTacToeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeView.swift; sourceTree = "<group>"; };
 		2C08EFA02A26904D001D9540 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		2C08EFA32A26955E001D9540 /* GridLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLinesView.swift; sourceTree = "<group>"; };
+		2C08EFA62A269C34001D9540 /* ActivePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivePlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 				2C08EF9D2A268B90001D9540 /* TicTacToeView.swift */,
 				2C08EFA02A26904D001D9540 /* GridView.swift */,
 				2C08EFA32A26955E001D9540 /* GridLinesView.swift */,
+				2C08EFA62A269C34001D9540 /* ActivePlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +327,7 @@
 				2C08EFA42A26955E001D9540 /* GridLinesView.swift in Sources */,
 				2C08EF5F2A26867A001D9540 /* TicTacToeApp.swift in Sources */,
 				2C08EFA12A26904D001D9540 /* GridView.swift in Sources */,
+				2C08EFA72A269C34001D9540 /* ActivePlayerView.swift in Sources */,
 				2C08EF8D2A268781001D9540 /* TicModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +341,7 @@
 				2C08EF9B2A268ACE001D9540 /* TicViewModel.swift in Sources */,
 				2C08EF9F2A268B90001D9540 /* TicTacToeView.swift in Sources */,
 				2C08EF8A2A26872D001D9540 /* TicModelTests.swift in Sources */,
+				2C08EFA82A269C34001D9540 /* ActivePlayerView.swift in Sources */,
 				2C08EFA22A26904D001D9540 /* GridView.swift in Sources */,
 				2C08EF982A268AAC001D9540 /* TicViewModelTests.swift in Sources */,
 			);
