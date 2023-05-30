@@ -11,9 +11,11 @@
 		2C08EF612A26867A001D9540 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF602A26867A001D9540 /* ContentView.swift */; };
 		2C08EF632A26867B001D9540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C08EF622A26867B001D9540 /* Assets.xcassets */; };
 		2C08EF662A26867B001D9540 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C08EF652A26867B001D9540 /* Preview Assets.xcassets */; };
-		2C08EF702A26867B001D9540 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF6F2A26867B001D9540 /* TicTacToeTests.swift */; };
 		2C08EF7A2A26867B001D9540 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF792A26867B001D9540 /* TicTacToeUITests.swift */; };
 		2C08EF7C2A26867B001D9540 /* TicTacToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF7B2A26867B001D9540 /* TicTacToeUITestsLaunchTests.swift */; };
+		2C08EF8A2A26872D001D9540 /* TicModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF892A26872D001D9540 /* TicModelTests.swift */; };
+		2C08EF8D2A268781001D9540 /* TicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF8C2A268781001D9540 /* TicModel.swift */; };
+		2C08EF8E2A26879B001D9540 /* TicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08EF8C2A268781001D9540 /* TicModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +42,11 @@
 		2C08EF622A26867B001D9540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C08EF652A26867B001D9540 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C08EF6B2A26867B001D9540 /* TicTacToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C08EF6F2A26867B001D9540 /* TicTacToeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeTests.swift; sourceTree = "<group>"; };
 		2C08EF752A26867B001D9540 /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C08EF792A26867B001D9540 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		2C08EF7B2A26867B001D9540 /* TicTacToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2C08EF892A26872D001D9540 /* TicModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicModelTests.swift; sourceTree = "<group>"; };
+		2C08EF8C2A268781001D9540 /* TicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		2C08EF5D2A26867A001D9540 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				2C08EF8B2A26875F001D9540 /* Models */,
 				2C08EF5E2A26867A001D9540 /* TicTacToeApp.swift */,
 				2C08EF602A26867A001D9540 /* ContentView.swift */,
 				2C08EF622A26867B001D9540 /* Assets.xcassets */,
@@ -113,7 +117,7 @@
 		2C08EF6E2A26867B001D9540 /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
-				2C08EF6F2A26867B001D9540 /* TicTacToeTests.swift */,
+				2C08EF882A268693001D9540 /* ModelTests */,
 			);
 			path = TicTacToeTests;
 			sourceTree = "<group>";
@@ -125,6 +129,22 @@
 				2C08EF7B2A26867B001D9540 /* TicTacToeUITestsLaunchTests.swift */,
 			);
 			path = TicTacToeUITests;
+			sourceTree = "<group>";
+		};
+		2C08EF882A268693001D9540 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C08EF892A26872D001D9540 /* TicModelTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		2C08EF8B2A26875F001D9540 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C08EF8C2A268781001D9540 /* TicModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +218,7 @@
 					};
 					2C08EF6A2A26867B001D9540 = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 						TestTargetID = 2C08EF5A2A26867A001D9540;
 					};
 					2C08EF742A26867B001D9540 = {
@@ -259,6 +280,7 @@
 			files = (
 				2C08EF612A26867A001D9540 /* ContentView.swift in Sources */,
 				2C08EF5F2A26867A001D9540 /* TicTacToeApp.swift in Sources */,
+				2C08EF8D2A268781001D9540 /* TicModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C08EF702A26867B001D9540 /* TicTacToeTests.swift in Sources */,
+				2C08EF8E2A26879B001D9540 /* TicModel.swift in Sources */,
+				2C08EF8A2A26872D001D9540 /* TicModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +493,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -478,6 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cascadia.TicTacToeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TicTacToe";
@@ -489,6 +514,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
