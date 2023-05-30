@@ -86,5 +86,29 @@ class TicViewModelTests: XCTestCase {
         XCTAssertTrue(ticViewModel.isGameOver)
         XCTAssertEqual(Winner.o, ticViewModel.winner)
     }
+    
+    func test_startGame_xPlayerTurn() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        // Act
+
+        // Assert
+        XCTAssertTrue(ticViewModel.isXTurn)
+    }
+
+    func test_alternateTurns_xTurn() {
+        // Arrange
+        let ticViewModel = TicViewModel()
+
+        for i in 1...9 {
+            // Act
+            ticViewModel.setCell(index: i-1, cellValue: .o)
+
+            // Assert
+            XCTAssertEqual(i%2==0  , ticViewModel.isXTurn)
+        }
+    }
+
 
 }

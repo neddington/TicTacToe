@@ -22,13 +22,19 @@ enum Winner {
 struct TicModel {
     private var _grid: [Cell]
     private var _winner: Winner
-
+    private var _playerXTurn: Bool
+    
     init() {
         _grid = []
         for _ in 0..<9 {
             _grid.append(Cell.b)
         }
         _winner = .none
+        _playerXTurn = true
+    }
+    
+    var isXTurn: Bool {
+        get { _playerXTurn }
     }
 
     var grid: [Cell] {
@@ -42,7 +48,7 @@ struct TicModel {
     var isGridFull: Bool {
         get { grid.filter { $0 == Cell.b }.count == 0 }
     }
-
+    
     mutating func setCell(n:Int, c: Cell) {
         guard _grid.indices.contains(n) else {
             return
@@ -51,6 +57,7 @@ struct TicModel {
             return
         }
         _grid[n] = c
+        _playerXTurn.toggle()
     }
 
     mutating func updateGameStatus() -> Bool {

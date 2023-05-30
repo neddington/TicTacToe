@@ -14,6 +14,10 @@ class TicViewModel: ObservableObject {
         ticModel = TicModel()
     }
     
+    var isXTurn: Bool {
+        get { ticModel.isXTurn }
+    }
+    
     var grid: [Cell] {
         get { ticModel.grid }
     }

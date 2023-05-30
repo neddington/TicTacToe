@@ -249,4 +249,38 @@ class TicModelTests: XCTestCase {
         XCTAssertTrue(ticModel.isGridFull)
     }
     
+    func test_startGame_xPlayerTurn() {
+        // Arrange
+        let ticModel = TicModel()
+
+        // Act
+
+        // Assert
+        XCTAssertTrue(ticModel.isXTurn)
+    }
+
+    func test_secondTurn_isO() {
+        // Arrange
+        var ticModel = TicModel()
+
+        // Act
+        ticModel.setCell(n: 5, c: .x)
+
+        // Assert
+        XCTAssertFalse(ticModel.isXTurn)
+    }
+    
+    func test_repeatTurn_ignored() {
+        // Arrange
+        var ticModel = TicModel()
+
+        // Act
+        ticModel.setCell(n: 5, c: .x)
+        ticModel.setCell(n: 5, c: .o)
+        ticModel.setCell(n: 5, c: .b)
+
+        // Assert
+        XCTAssertFalse(ticModel.isXTurn)
+    }
+    
 }
