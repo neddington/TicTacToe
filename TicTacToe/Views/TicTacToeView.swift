@@ -29,7 +29,7 @@ struct TicTacToeView: View {
                     ActivePlayerView(
                         isActive: ticVm.isXTurn && !ticVm.isGameOver,
                         player: "Player X")
-
+                    
                     ActivePlayerView(
                         isActive: !ticVm.isXTurn && !ticVm.isGameOver,
                         player: "Player O")
@@ -37,13 +37,18 @@ struct TicTacToeView: View {
                 
                 GridView(ticVm: ticVm)
                 
+                if ticVm.isGameOver {
+                    Text("GAME OVER !")
+                        .foregroundColor(Color.indigo)
+                        .font(.custom("Helvetica Neue", size: 46, relativeTo: .largeTitle))
+                        .fontWeight(.bold)
+                }
+                
                 Spacer()
             }
         }
-        
     }
 }
-
 
 struct TicTacToeView_Previews: PreviewProvider {
     static var previews: some View {

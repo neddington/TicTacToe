@@ -18,6 +18,7 @@ struct GridView: View {
                     HStack(spacing:3) {
                         ForEach(0..<n, id:\.self) { c in
                             let index = (r*n) + c
+                            let cellContent = ticVm.grid[index]
                             
                             Button(action: {
                                 // set the cell to X or O
